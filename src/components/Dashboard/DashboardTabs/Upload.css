@@ -1,0 +1,10 @@
+.important-info {
+    font-size: 1.2em;
+    font-family: serif;
+    color: crimson;
+    margin-bottom: 5em;
+}
+
+.images-info {
+    white-space: pre-wrap;
+}
