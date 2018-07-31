@@ -20,16 +20,11 @@ class Upload extends React.Component {
 
     constructor() {
         super();
-        this.djsConfig = {
-            addRemoveLinks: true,
-            acceptedFiles: "image/jpeg,image/png",
-            autoProcessQueue: false
-        };
 
         this.componentConfig = {
             iconFiletypes: ['.jpg', '.png'],
             showFiletypeIcon: true,
-            postUrl: '/uploadHandler'
+            postUrl: 'http://localhost:3003/images'
         };
 
 
@@ -53,13 +48,22 @@ class Upload extends React.Component {
 
     render() {
         const config = this.componentConfig;
-        const djsConfig = this.djsConfig;
-
+        const djsConfig = this.djsConfig = {
+            addRemoveLinks: true,
+            acceptedFiles: "image/jpeg,image/png",
+            autoProcessQueue: false,
+            parallelUploads: 10,
+            params: {
+        		location: JSON.stringify(this.props.store.location)
+    		}
+        };
+ 
         const eventHandlers = {
             init: dz => this.dropzone = dz,
             addedfile: this.handleFile,
             removedfile: this.handleRemoveFile
         };
+
 
         return (
             <Grid>

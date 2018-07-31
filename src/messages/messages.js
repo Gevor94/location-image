@@ -1,5 +1,5 @@
 const MESSAGES = {
-	checkCredentials: 'Checking user credentials',
+	loadingImages: 'Loading images...',
 	authBlock: {
 		signUp: 'Sign Up',
 		signIn: 'Sign In',
@@ -7,7 +7,9 @@ const MESSAGES = {
 		passwordPlaceholder: 'Password',
 		name: 'Username',
 		password: 'Password',
-		repeatPassword: 'Repeat password'
+		repeatPassword: 'Repeat password',
+		register: 'Registration',
+		successSignUp: 'Sign up process finished successfully, after closing this modal you automatically will be redirected to login page'
 	},
 	mainPage: {
 		uploadImages: 'Upload',
@@ -21,7 +23,7 @@ const MESSAGES = {
 			info: 'Images information',
 			longitude: 'Longitude:',
 			latitude: 'Latitute:',
-			state: 'State:',
+			date: 'Date:',
 			title: 'Title:'
         },
 		importantInfo: '*Please select location before image upload, otherwise image location will be default : lat-40.18111, lng-44.51361',

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
 
 import FontAwesome from 'react-fontawesome';
 import {Row, FormGroup, FormControl, ControlLabel, Col, Button} from 'react-bootstrap';
@@ -24,10 +25,23 @@ class SignIn extends React.Component {
         this.props.store.setPassword(e.target.value);
     };
 
+    onSubmit = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (event.target.elements) {
+            const data = {
+                username: this.props.store.username,
+                pwd: this.props.store.password
+            };
+            this.props.store.login(data);
+        }
+    };
+
     render() {
         const {store} = this.props;
+
         return (
-            <form>
+            <form  onSubmit={this.onSubmit}>
                 <FormGroup bsClass="authContainer col-sm-offset-4">
                     <Row bsClass="row login-row">
                         <Col sm={12}>
@@ -78,5 +92,5 @@ class SignIn extends React.Component {
     }
 }
 
-export default SignIn;
+export default withRouter(SignIn);
 

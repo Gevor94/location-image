@@ -6,12 +6,10 @@ import registerServiceWorker from './registerServiceWorker';
 import Routes from './routes';
 
 import authStore from './stores/authStore';
-import appStore from './stores/appStore';
 import dashboardStore from './stores/dashboardStore';
 
 const stores = {
 	authStore,
-	appStore,
 	dashboardStore
 };
 
