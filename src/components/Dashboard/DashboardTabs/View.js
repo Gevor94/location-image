@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-import {Button, Grid, Row} from 'react-bootstrap';
+import {Grid} from 'react-bootstrap';
 import {inject, observer} from 'mobx-react';
 
 import './Upload.css';

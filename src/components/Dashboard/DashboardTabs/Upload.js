@@ -29,6 +29,7 @@ class Upload extends React.Component {
 
 
     }
+
     static propTypes = {
         store: PropTypes.object.isRequired
     };
@@ -54,10 +55,11 @@ class Upload extends React.Component {
             autoProcessQueue: false,
             parallelUploads: 10,
             params: {
-        		location: JSON.stringify(this.props.store.location)
-    		}
+                location: JSON.stringify(this.props.store.location),
+                user: this.props.store.user
+            }
         };
- 
+
         const eventHandlers = {
             init: dz => this.dropzone = dz,
             addedfile: this.handleFile,
@@ -88,8 +90,8 @@ class Upload extends React.Component {
                     </p>
                 </Row>
                 <Row>
-                    <MapComponent store={this.props.store} />
-                    <ImagesInfo store={this.props.store} />
+                    <MapComponent store={this.props.store}/>
+                    <ImagesInfo store={this.props.store}/>
                 </Row>
             </Grid>
         );

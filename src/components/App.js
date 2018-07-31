@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {inject, observer} from 'mobx-react';
-import LoadingScreen from 'react-loading-screen';
-
-import M from '../messages/messages';
 
 import Dashboard from './Dashboard/Dashboard';
 import Auth from './Auth';

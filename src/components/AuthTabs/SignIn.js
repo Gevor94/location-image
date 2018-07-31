@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 
-import FontAwesome from 'react-fontawesome';
 import {Row, FormGroup, FormControl, ControlLabel, Col, Button} from 'react-bootstrap';
 import {inject, observer} from 'mobx-react';
 
@@ -61,7 +60,7 @@ class SignIn extends React.Component {
                     <Row bsClass="row login-row">
                         <Col sm={12}>
                             <FormControl
-                                type="text"
+                                type="password"
                                 value={store.password}
                                 placeholder={M.authBlock.passwordPlaceholder}
                                 onChange={this.onPasswordChange}
@@ -77,13 +76,6 @@ class SignIn extends React.Component {
                                 onSubmit={this.onSubmit}>
                                 {M.authBlock.signIn}
                             </Button>
-                        </Col>
-                        <Col sm={2} className="facebook">
-                            <FontAwesome
-                                className="fb-icon"
-                                name='facebook-square'
-                                size='2x'
-                            />
                         </Col>
                     </Row>
                 </FormGroup>
